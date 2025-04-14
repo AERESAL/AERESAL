@@ -1,4 +1,6 @@
 # Sai Seelam
+<img  alt="Alt text" src="/Wolve.png" width="200">
+
 ## About Me
 - **Education:** ENHS Class of '27
 - **Passions:** Robotics, coding, and creative problem-solving
