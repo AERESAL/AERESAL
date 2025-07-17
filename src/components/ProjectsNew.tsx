@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Project } from '../types';
+import GlassCard from './GlassCard';
 
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -122,47 +123,49 @@ const Projects: React.FC = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="bg-card-bg rounded-lg overflow-hidden border border-border-color hover:border-accent transition-all duration-300 group"
+              className="group"
             >
-              {/* Website Preview Image */}
-              <div className="relative h-48 bg-gray-800 overflow-hidden">
-                <img
-                  src={project.preview}
-                  alt={`${project.name} website preview`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => handleImageError(e, project)}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                
-                {/* Domain overlay */}
-                <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                  {project.link.replace(/^https?:\/\//, '').replace(/\/$/, '').split('/')[0]}
+              <GlassCard className="rounded-lg overflow-hidden border border-border-color hover:border-accent transition-all duration-300" noPadding>
+                {/* Website Preview Image */}
+                <div className="relative h-48 bg-gray-800 overflow-hidden">
+                  <img
+                    src={project.preview}
+                    alt={`${project.name} website preview`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => handleImageError(e, project)}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+                  
+                  {/* Domain overlay */}
+                  <div className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                    {project.link.replace(/^https?:\/\//, '').replace(/\/$/, '').split('/')[0]}
+                  </div>
                 </div>
-              </div>
-              
-              {/* Project Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-accent transition-colors">
-                  {project.title || project.name}
-                </h3>
-                <p className="text-text-secondary mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
                 
-                {/* Visit Website Button */}
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-medium"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Visit Website
-                </motion.a>
-              </div>
+                {/* Project Info */}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-accent transition-colors">
+                    {project.title || project.name}
+                  </h3>
+                  <p className="text-text-secondary mb-4 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                  
+                  {/* Visit Website Button */}
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded-lg transition-colors duration-300 text-sm font-medium"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Visit Website
+                  </motion.a>
+                </div>
+              </GlassCard>
             </motion.div>
           ))}
         </motion.div>

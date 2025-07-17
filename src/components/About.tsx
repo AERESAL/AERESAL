@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Skill, Experience, Education } from '../types';
+import GlassCard from './GlassCard';
 
 interface AboutProps {
   description: string;
@@ -63,16 +64,18 @@ const About: React.FC<AboutProps> = ({ description, skills, experiences, educati
             <h3 className="text-2xl font-semibold mb-6 text-white">Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {skills.map((skillCategory) => (
-                <div key={skillCategory.category} className="bg-card-bg p-6 rounded-lg border border-border-color">
-                  <h4 className="text-lg font-medium mb-4 text-white">{skillCategory.category}</h4>
-                  <ul className="space-y-2">
-                    {skillCategory.items.map((skill) => (
-                      <li key={skill} className="text-text-secondary">
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <GlassCard key={skillCategory.category} className="rounded-lg border border-border-color">
+                  <div className="p-6">
+                    <h4 className="text-lg font-medium mb-4 text-white">{skillCategory.category}</h4>
+                    <ul className="space-y-2">
+                      {skillCategory.items.map((skill) => (
+                        <li key={skill} className="text-text-secondary">
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </GlassCard>
               ))}
             </div>
           </motion.div>
@@ -105,11 +108,13 @@ const About: React.FC<AboutProps> = ({ description, skills, experiences, educati
             <h3 className="text-2xl font-semibold mb-6 text-white">Education</h3>
             <div className="space-y-4">
               {education.map((edu) => (
-                <div key={edu.id} className="bg-card-bg p-6 rounded-lg border border-border-color">
-                  <h4 className="text-lg font-medium text-white">{edu.degree}</h4>
-                  <p className="text-text-secondary">{edu.institution}</p>
-                  <p className="text-accent text-sm">{edu.duration}</p>
-                </div>
+                <GlassCard key={edu.id} className="rounded-lg border border-border-color">
+                  <div className="p-6">
+                    <h4 className="text-lg font-medium text-white">{edu.degree}</h4>
+                    <p className="text-text-secondary">{edu.institution}</p>
+                    <p className="text-accent text-sm">{edu.duration}</p>
+                  </div>
+                </GlassCard>
               ))}
             </div>
           </motion.div>
