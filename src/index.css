@@ -7,6 +7,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  height: 100%;
 }
 
 body {
@@ -15,6 +17,19 @@ body {
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Scroll snap container */
+#root {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 /* Custom scrollbar */
@@ -33,4 +48,14 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #4338ca;
+}
+
+/* Disable text selection globally */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }

@@ -3,40 +3,51 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Projects from './components/ProjectsNew';
 import Footer from './components/Footer';
-import { PersonalInfo, ContactLink } from './types';
+import { ContactLink } from './types';
 
 const App: React.FC = () => {
-  const personalInfo: PersonalInfo = {
-    name: "Sai Seelam",
-    title: "ENHS'27",
-    description: "Student at East Northport High School, Class of 2027",
-    profileImage: "profile-placeholder.svg"
-  };
-
   const contactLinks: ContactLink[] = [
     {
       id: "1",
       type: "instagram",
-      label: "@saiseelam",
-      url: "https://instagram.com/saiseelam"
+      label: "@saitrseelam",
+      url: "https://instagram.com/saitrseelam"
     },
     {
       id: "2",
       type: "tiktok",
       label: "@saiseelam",
-      url: "https://tiktok.com/@saiseelam"
+      url: "https://tiktok.com/@saitrseelam"
     }
   ];
 
   return (
-    <div className="bg-primary text-text-primary overflow-x-hidden">
+    <div className="bg-primary text-text-primary overflow-x-hidden h-screen overflow-y-auto" style={{ scrollSnapType: 'y mandatory' }}>
       <Navigation />
-      <Hero personalInfo={personalInfo} />
+      <Hero />
       <Projects />
       
-      {/* GitHub Stats Section */}
-      <section id="stats" className="py-20 bg-secondary">
-        <div className="container mx-auto px-5">
+      <section 
+        id="stats" 
+        className="min-h-screen py-20 flex items-center relative"
+        style={{
+          backgroundImage: 'url(/background2.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          scrollSnapAlign: 'start',
+          scrollSnapStop: 'always'
+        }}
+      >
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundColor: 'rgba(25, 50, 90, 0.6)',
+            mixBlendMode: 'multiply'
+          }}
+        ></div>
+        
+        <div className="container mx-auto px-5 w-full relative z-10">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">
             Coding Stats
           </h2>
@@ -52,9 +63,15 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="connect" className="py-20 bg-primary">
-        <div className="container mx-auto px-5">
+      <section 
+        id="connect" 
+        className="min-h-screen py-20 bg-primary flex items-center"
+        style={{
+          scrollSnapAlign: 'start',
+          scrollSnapStop: 'always'
+        }}
+      >
+        <div className="container mx-auto px-5 w-full">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">
             Connect With Me
           </h2>

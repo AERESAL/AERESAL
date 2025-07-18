@@ -15,14 +15,23 @@ const Navigation: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80;
+      // Get the scroll container (App div or body)
+      const scrollContainer = document.querySelector('[style*="scroll-snap-type"]') || document.documentElement;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      const containerScrollTop = scrollContainer.scrollTop || window.pageYOffset;
+      const targetPosition = elementPosition + containerScrollTop;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+      if (scrollContainer === document.documentElement) {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      } else {
+        scrollContainer.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 
@@ -31,12 +40,12 @@ const Navigation: React.FC = () => {
       initial={{ y: 0 }}
       animate={{
         y: scrollY > 300 && !isScrollingUp ? -100 : 0,
-        backgroundColor: scrollY > 50 ? 'rgba(18, 18, 18, 0.95)' : 'rgba(18, 18, 18, 0.9)',
+        backgroundColor: scrollY > 50 ? 'rgba(18, 18, 18, 0.3)' : 'rgba(18, 18, 18, 0.2)',
       }}
       transition={{ duration: 0.3 }}
       className="fixed top-0 left-0 w-full z-50 backdrop-blur-md"
       style={{
-        boxShadow: scrollY > 50 ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
+        boxShadow: scrollY > 50 ? '0 4px 6px rgba(0, 0, 0, 0.05)' : 'none',
       }}
     >
       <div className="container mx-auto px-5 py-4">
