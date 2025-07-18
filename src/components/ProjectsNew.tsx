@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Project } from '../types';
-import GlassCard from './GlassCard';
 
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -125,7 +124,7 @@ const Projects: React.FC = () => {
               variants={itemVariants}
               className="group"
             >
-              <GlassCard className="rounded-lg overflow-hidden border border-border-color hover:border-accent transition-all duration-300" noPadding>
+              <div className="bg-card-bg rounded-lg overflow-hidden border border-border-color hover:border-accent transition-all duration-300">
                 {/* Website Preview Image */}
                 <div className="relative h-48 bg-gray-800 overflow-hidden">
                   <img
@@ -165,7 +164,7 @@ const Projects: React.FC = () => {
                     Visit Website
                   </motion.a>
                 </div>
-              </GlassCard>
+              </div>
             </motion.div>
           ))}
         </motion.div>

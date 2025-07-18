@@ -3,7 +3,6 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Projects from './components/ProjectsNew';
 import Footer from './components/Footer';
-import GlassCard from './components/GlassCard';
 import { PersonalInfo, ContactLink } from './types';
 
 const App: React.FC = () => {
@@ -30,7 +29,7 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="bg-primary text-text-primary">
+    <div className="bg-primary text-text-primary overflow-x-hidden">
       <Navigation />
       <Hero personalInfo={personalInfo} />
       <Projects />
@@ -42,13 +41,13 @@ const App: React.FC = () => {
             Coding Stats
           </h2>
           <div className="flex justify-center">
-            <GlassCard className="border border-border-color" noPadding>
+            <div className="bg-card-bg p-4 border border-border-color rounded-lg">
               <img 
                 src="https://github-readme-stats.hackclub.dev/api/wakatime?username=1380&api_domain=hackatime.hackclub.com&&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8&theme=midnight-purple"
                 alt="Hackatime Stats"
                 className="rounded-lg"
               />
-            </GlassCard>
+            </div>
           </div>
         </div>
       </section>
