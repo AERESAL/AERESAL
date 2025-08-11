@@ -1,0 +1,21 @@
+{
+  "name": "Sai Seelam Portfolio",
+  "short_name": "Sai Seelam",
+  "description": "Student developer and robotics enthusiast from ENHS Class of 2027",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/profile-placeholder.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["education", "productivity", "portfolio"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
