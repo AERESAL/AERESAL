@@ -52,14 +52,32 @@ const Hero: React.FC = () => {
           <div>Sai</div>
           <div>Seelam</div>
         </motion.div>
-        
+
+        {/* Small description aligned under the name. Replace the placeholder text and URL with your real description and LinkedIn profile. */}
+        <motion.div
+          className="mt-4 max-w-lg text-white"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
+        >
+          <p className="text-lg md:text-xl font-medium">Computer Engineering Student | 43280D</p>
+          <a
+            href="https://www.linkedin.com/in/your-linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 text-accent font-medium hover:underline"
+          >
+            LinkedIn
+          </a>
+        </motion.div>
+
         <motion.div 
           className="text-sm md:text-base lg:text-lg xl:text-xl font-medium text-white mt-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ 
             duration: 0.8,
-            delay: 0.8,
+            delay: 1.1,
             ease: "easeOut"
           }}
         >
