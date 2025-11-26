@@ -12,12 +12,6 @@ const App: React.FC = () => {
       type: "instagram",
       label: "@saitrseelam",
       url: "https://instagram.com/saitrseelam"
-    },
-    {
-      id: "2",
-      type: "tiktok",
-      label: "@saiseelam",
-      url: "https://tiktok.com/@saitrseelam"
     }
   ];
 
@@ -90,12 +84,14 @@ const App: React.FC = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 bg-card-bg px-6 py-3 rounded-lg border border-border-color hover:border-accent transition-all duration-300 hover:bg-accent/10 group"
                 >
-                  <span className="text-accent group-hover:text-accent-hover transition-colors">
-                    {link.type === 'instagram' ? '📷' : '🎵'}
-                  </span>
-                  <span className="text-white group-hover:text-accent transition-colors">
-                    {link.label}
-                  </span>
+                      <span className="text-accent group-hover:text-accent-hover transition-colors">
+                        {link.type === 'instagram' ? (
+                          <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" alt="Instagram" className="w-5 h-5 object-contain" />
+                        ) : null}
+                      </span>
+                      <span className="text-white group-hover:text-accent transition-colors">
+                        {link.label}
+                      </span>
                 </a>
               ))}
             </div>

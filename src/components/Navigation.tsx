@@ -52,13 +52,25 @@ const Navigation: React.FC = () => {
         <ul className="flex justify-center items-center gap-8">
           {navItems.map((item) => (
             <li key={item.id}>
-              <button
-                onClick={() => scrollToSection(item.id)}
-                className="relative text-white font-medium py-2 px-1 transition-colors duration-300 hover:text-accent group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
-              </button>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative text-white font-medium py-2 px-1 transition-colors duration-300 hover:text-accent group"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              ) : (
+                <button
+                  onClick={() => scrollToSection(item.id)}
+                  className="relative text-white font-medium py-2 px-1 transition-colors duration-300 hover:text-accent group"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                </button>
+              )}
             </li>
           ))}
         </ul>

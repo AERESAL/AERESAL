@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         >
           <p className="text-lg md:text-xl font-medium">Computer Engineering Student | 43280D</p>
           <a
-            href="https://www.linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/sai-seelam-122736376/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-2 text-accent font-medium hover:underline"
