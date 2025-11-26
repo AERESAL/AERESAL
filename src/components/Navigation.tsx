@@ -5,7 +5,7 @@ import { useScrollPosition } from '../hooks/useScrollPosition';
 const Navigation: React.FC = () => {
   const { scrollY, isScrollingUp } = useScrollPosition();
 
-  const navItems = [
+  const navItems: { id: string; label: string; href?: string }[] = [
     { id: 'home', label: 'Home' },
     { id: 'projects', label: 'Projects' },
     { id: 'stats', label: 'Stats' },

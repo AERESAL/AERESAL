@@ -3,6 +3,13 @@
     "id": "1",
     "name": "VolunteerHub",
     "link": "https://volunteerhub.saitrseelam.com",
-    "description": "A comprehensive platform connecting volunteers with meaningful opportunities in their community. Features event management, volunteer tracking, and impact analytics."
+    "description": "DECA project with a focus on community engagement and volunteering for high school students."
+  },
+  {
+    "id": "2",
+    "name": "ENHS Coding Club",
+    "link": "https://enhscoding.com",
+    "description": "Personal site and coding projects for ENHS — showcases tutorials, small tools, and frontend experiments."
   }
+
 ]
